@@ -1,8 +1,10 @@
-#main url file 
-from django.contrib import admin
-from django.urls import path, include 
+#url file defined inside root folder
+from django.urls import path
+from .views import createUrl,routeToURL
 from django.http import HttpResponse
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include('root.urls'))       # this command leads to the url file created mannually 
-]
+   
+    path('',createUrl), 
+    path('<slug:key>/', routeToURL)
+]  
