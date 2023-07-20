@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <style>
+        body {
+            margin: 10;
+            padding: 0;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            
+        }
+        
+        form {
+            width: 600px;
+            padding: 40px;
+            background-color: #FFFF00;
+            border: 5px solid blue;
+            height:500px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            font-weight: bold;
+            font-size:20px;
+            text-align:center;
+            padding:10px;
+        }
+        
+        .form-group input[type="text"] {
+            padding: 10px;
+            border: 2px solid blue;
+        }
+        
+        .form-group button {
+            padding: 10px 20px;
+            background-color: blue;
+            border: none;
+            color: white;
+            cursor: pointer;
+            width : 100px ;
+            margin : 0 auto ;
+            border: 2px solid white ;
+            transition : background-color 0.2s;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+            font-weight: bold;
+            font-size:15px;
+            
+          
+        }
+        .form-group button:hover
+        {
+            background-color:grey;
+        }
+        
+        .form-group p {
+            margin-top: 10px;
+            font-size:20px;
+            text-align: center;
+        }
+        
+        .center-heading {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="POST">
+            <!-- CSRF token goes here -->
+            {% csrf_token %}
+
+            <h1 class="center-heading",color:"blue">URL SHORTENER</h1>
+
+            <div class="form-group">
+                <label for="full_url">Full URL:</label>
+                <input type="text" name="full_url" id="full_url" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+
+            <div class="form-group">
+                <p>{{ full_url }}</p>
+                <p>{{ short_url }}</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
