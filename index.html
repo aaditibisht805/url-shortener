@@ -14,40 +14,40 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 80vh;
+            height: 100vh;
+           
             
         }
         
         form {
-            width: 600px;
-            padding: 40px;
-            background-color: #FFFF00;
-            border: 5px solid blue;
-            height:500px;
+            width: 800px;
+            padding: 20px;
+            background-color: pink;
+            border: 60px solid indigo;
+            height:400px;
         }
         
         .form-group {
             display: flex;
             flex-direction: column;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
         
         .form-group label {
             font-weight: bold;
             font-size:20px;
             text-align:center;
-            padding:10px;
+            padding:15px;
         }
         
         .form-group input[type="text"] {
             padding: 10px;
-            border: 2px solid blue;
+            border: 5px solid indigo;
         }
         
         .form-group button {
             padding: 10px 20px;
-            background-color: blue;
-            border: none;
+            background-color: indigo;
             color: white;
             cursor: pointer;
             width : 100px ;
@@ -65,24 +65,34 @@
             background-color:grey;
         }
         
-        .form-group p {
+        .form-group p1 {
+            margin-top: 10px;
+            font-size:12px;
+            text-align: left;
+            font-weight:bold;
+        }
+        .form-group p2 {
             margin-top: 10px;
             font-size:20px;
             text-align: center;
+            color: indigo;
+            font-weight: bold;
+
         }
         
         .center-heading {
             text-align: center;
+            
         }
     </style>
 </head>
 <body>
     <div class="container">
         <form action="" method="POST">
-            <!-- CSRF token goes here -->
-            {% csrf_token %}
+             <!--CSRF token  security feature -->
+            {% csrf_token %} 
 
-            <h1 class="center-heading",color:"blue">URL SHORTENER</h1>
+            <h1 class="center-heading">URL SHORTENER</h1>
 
             <div class="form-group">
                 <label for="full_url">Full URL:</label>
@@ -94,9 +104,13 @@
             </div>
 
             <div class="form-group">
-                <p>{{ full_url }}</p>
-                <p>{{ short_url }}</p>
+                <p1>{{ full_url }}</p1>
+             
             </div>
+            <div class="form-group">
+                <p2>{{ short_url }}</p2>
+            </div>
+
         </form>
     </div>
 </body>
